@@ -10,4 +10,5 @@ export const setupOrganisation = async ({ code }: SetupOrganisationParams) => {
   const { accessToken, grantId } = await getToken(code);
 
   const events = await getCalendarEvents(accessToken, grantId);
+  console.log("events:", events);
 };

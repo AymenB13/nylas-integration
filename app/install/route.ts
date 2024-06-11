@@ -10,6 +10,11 @@ export function GET(request: NextRequest) {
   redirectUrl.searchParams.append("response_type", "code");
   redirectUrl.searchParams.append("client_id", process.env.NEXT_PUBLIC_NYLAS_CLIENT_ID as string);
   redirectUrl.searchParams.append("redirect_uri", process.env.NEXT_PUBLIC_NYLAS_REDIRECT_URI as string);
+    // redirectUrl.searchParams.append("access_type", "online");
   redirectUrl.searchParams.append("prompt", "detect");
+  // redirectUrl.searchParams.append("provider", "microsoft");
+  // redirectUrl.searchParams.append("state", state);
+
+  // we redirect the user to the installation page of the SaaS application
   redirect(redirectUrl.toString());
 }
