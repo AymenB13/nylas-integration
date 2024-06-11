@@ -23,11 +23,11 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   console.log("hash:", hash);
 
-  // if (hash !== signature) {
-  //   return new NextResponse("Invalid signature", {
-  //     status: 401,
-  //   });
-  // }
+  if (hash !== signature) {
+    return new NextResponse("Invalid signature", {
+      status: 401,
+    });
+  }
 
   // Process the webhook event
   const event = JSON.parse(body);
